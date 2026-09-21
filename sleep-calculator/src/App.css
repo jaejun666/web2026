@@ -1,0 +1,286 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans KR",
+    sans-serif;
+  background: #080f24;
+  color: #f8fafc;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(53, 76, 145, 0.3),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #070d1d 0%,
+      #101a3b 50%,
+      #080f25 100%
+    );
+}
+
+/* 별 */
+.star {
+  position: absolute;
+  color: #9aa9d8;
+  opacity: 0.6;
+  font-size: 20px;
+}
+
+.star1 {
+  top: 20%;
+  left: 17%;
+}
+
+.star2 {
+  top: 28%;
+  right: 16%;
+  font-size: 25px;
+  color: #e0c98b;
+}
+
+.star3 {
+  bottom: 25%;
+  left: 28%;
+  font-size: 14px;
+}
+
+.star4 {
+  top: 40%;
+  right: 28%;
+  font-size: 24px;
+}
+
+/* 메인 카드 */
+.sleep-card {
+  width: 440px;
+  padding: 42px 34px 34px;
+
+  background: rgba(20, 31, 61, 0.88);
+  border: 1px solid rgba(129, 153, 210, 0.2);
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(15px);
+}
+
+/* 헤더 */
+.header {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.moon {
+  font-size: 58px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 15px rgba(255, 201, 87, 0.35));
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+
+  color: #f8fafc;
+}
+
+.header p {
+  margin: 12px 0 0;
+
+  font-size: 15px;
+  color: #aab7d5;
+}
+
+/* 입력 영역 */
+.time-section {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.time-box label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 9px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #e8edf9;
+}
+
+.label-icon {
+  font-size: 19px;
+}
+
+/* 시간 입력 */
+.time-box input {
+  width: 100%;
+  height: 58px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(128, 151, 207, 0.25);
+  border-radius: 12px;
+
+  background: rgba(36, 52, 91, 0.8);
+  color: #f8fafc;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  outline: none;
+  transition: 0.2s;
+}
+
+.time-box input:focus {
+  border-color: #667cff;
+  box-shadow: 0 0 0 3px rgba(102, 124, 255, 0.15);
+}
+
+/* 계산 버튼 */
+.calculate-button {
+  width: 100%;
+  height: 58px;
+
+  margin-top: 28px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #6366f1,
+    #4f7df7
+  );
+
+  color: white;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.calculate-button span {
+  margin-right: 8px;
+}
+
+.calculate-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 25px rgba(79, 125, 247, 0.3);
+}
+
+.calculate-button:active {
+  transform: translateY(0);
+}
+
+/* 결과 */
+.result {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 24px;
+  padding: 19px;
+
+  border: 1px solid rgba(128, 151, 207, 0.16);
+  border-radius: 14px;
+
+  background: rgba(30, 45, 81, 0.65);
+
+  transition: 0.2s;
+}
+
+.result.active {
+  border-color: rgba(104, 126, 255, 0.35);
+  background: rgba(45, 59, 103, 0.8);
+}
+
+.result-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(87, 109, 170, 0.25);
+
+  font-size: 24px;
+}
+
+.result-text {
+  min-width: 0;
+}
+
+.result-text strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 15px;
+  color: #dce5fa;
+}
+
+.result-text p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.5;
+  color: #9eacce;
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+  .app {
+    padding: 20px;
+  }
+
+  .sleep-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 34px 24px 26px;
+  }
+
+  .header h1 {
+    font-size: 29px;
+  }
+
+  .moon {
+    font-size: 50px;
+  }
+}
